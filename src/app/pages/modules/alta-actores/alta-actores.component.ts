@@ -16,7 +16,7 @@ export class AltaActoresComponent {
   apellido: string = '';
   sexo: string = '';
   pais: string = '';
-
+  
   constructor(private actoresService: ActoresService) { }
 
   ngOnInit(): void {
