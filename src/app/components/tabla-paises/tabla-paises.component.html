@@ -1,0 +1,16 @@
+<div class="card bg-primary-subtle">
+    <div class="card-body">
+        <h4 class="card-title">Países</h4>
+        <div class="container-paises">
+            <div *ngFor="let bandera of misPaises | async">
+                <!-- Hover added -->
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action d-flex justify-content-between" aria-current="true"  [value]="bandera.name.common" (click)="clickPais(bandera.name.common)">
+                        <span class="me-1">{{bandera.name.common}}</span>
+                        <img [src]="bandera.flags.svg" class="my-auto border border-1" style="max-height: 1rem;">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

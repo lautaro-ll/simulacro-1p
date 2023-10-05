@@ -1,0 +1,46 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-8">
+            <div class="card bg-primary-subtle">
+                <div class="card-body">
+                    <h4 class="card-title">Alta de actores</h4>
+
+                    <div class="mb-3">
+                        <label for="iNombre" class="form-label">Nombre</label>
+                        <input [(ngModel)]="nombre" type="text" class="form-control" name="Name" id="iNombre" aria-describedby="Nombre"
+                            placeholder="Ricardo">
+                    </div>
+                    <div class="mb-3">
+                        <label for="iApellido" class="form-label">Apellido</label>
+                        <input [(ngModel)]="apellido" type="text" class="form-control" name="Apellido" id="iApellido"
+                            aria-describedby="Apellido" placeholder="Darin">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Sexo" class="form-label">Sexo</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="Sexo" id="iFemenino" value="F" (change)="changeSexo($event.target)">
+                            <label class="form-check-label" for="iFemenino">Femenino</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="Sexo" id="iMasculino" value="M" (change)="changeSexo($event.target)">
+                            <label class="form-check-label" for="iMasculino">Masculino</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="iPais" class="form-label">Pais</label>
+                        <input [value]="pais" disabled type="text" class="form-control" name="Pais" id="iPais" aria-describedby="Pais"
+                            placeholder="Argentina">
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-danger me-md-2" type="button" (click)="clickLimpiar()">Limpiar</button>
+                        <button type="submit" class="btn btn-primary" (click)="clickGuardar()">Guardar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-4">
+            <app-tabla-paises (paisSeleccionado)="cargarPais($event)"></app-tabla-paises>
+        </div>
+    </div>
+</div>

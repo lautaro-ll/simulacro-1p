@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "simulacro-1p",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

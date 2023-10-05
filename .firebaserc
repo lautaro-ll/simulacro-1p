@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "simulacro-1p": {
+      "hosting": {
+        "simulacro-1p": [
+          "simulacro-1p"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "simulacro-1p"
+  }
+}
