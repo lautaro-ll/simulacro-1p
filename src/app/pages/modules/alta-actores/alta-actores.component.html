@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container pt-5">
     <div class="row">
         <div class="col-8">
             <div class="card bg-primary-subtle">
@@ -16,7 +16,7 @@
                             aria-describedby="Apellido" placeholder="Darin">
                     </div>
                     <div class="mb-3">
-                        <label for="Sexo" class="form-label">Sexo</label><br>
+                        <label class="form-label">Sexo</label><br>
                         <div class="form-check form-check-inline">
                             <input [ngModel]="sexo" class="form-check-input" type="radio" name="Sexo" id="iFemenino" value="F" (change)="changeSexo($event.target)">
                             <label class="form-check-label" for="iFemenino">Femenino</label>

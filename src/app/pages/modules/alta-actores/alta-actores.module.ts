@@ -5,6 +5,7 @@ import { AltaActoresRoutingModule } from './alta-actores-routing.module';
 import { AltaActoresComponent } from './alta-actores.component';
 import { TablaPaisesComponent } from 'src/app/components/tabla-paises/tabla-paises.component';
 import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AltaActoresRoutingModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ]
 })
 export class AltaActoresModule { }
