@@ -11,15 +11,13 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
-import { TablaPaisesComponent } from './components/tabla-paises/tabla-paises.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // TablaPaisesComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,71 @@
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-8">
+            <div class="card bg-primary-subtle">
+                <div class="card-body">
+                    <h4 class="card-title">Alta de peliculas</h4>
+
+                    <div class="mb-3">
+                        <label for="iTitulo" class="form-label">Título original</label>
+                        <input [(ngModel)]="pelicula.titulo" type="text" class="form-control" name="Titulo" id="iTitulo"
+                            aria-describedby="Nombre" placeholder="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="iAnio" class="form-label">Año</label>
+                        <input [(ngModel)]="pelicula.anio" type="text" class="form-control" name="Anio" id="iAnio"
+                            aria-describedby="Año" placeholder="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="iDuracion" class="form-label">Duración</label>
+                        <input [(ngModel)]="pelicula.duracion" type="text" class="form-control" name="Duracion"
+                            id="iDuracion" aria-describedby="Duracion" placeholder="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="iPais" class="form-label">País</label>
+                        <input [(ngModel)]="pelicula.pais" type="text" class="form-control" name="Pais" id="iPais"
+                            aria-describedby="Pais" placeholder="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="iDirector" class="form-label">Director</label>
+                        <input [(ngModel)]="pelicula.director" type="text" class="form-control" name="Director"
+                            id="iDirector" aria-describedby="Director" placeholder="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="iProtagonista" class="form-label">Protagonista</label>
+                        <input [(ngModel)]="actor.nombre + ' ' + actor.apellido" type="text" class="form-control"
+                            name="Protagonista" id="iProtagonista" aria-describedby="Protagonista" placeholder=""
+                            disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="iGenero" class="form-label">Género</label>
+                        <input [(ngModel)]="pelicula.genero" type="text" class="form-control" name="Genero" id="iGenero"
+                            aria-describedby="Genero" placeholder="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="iCartel" class="form-label">Cartel</label>
+                        <input type="file" class="form-control" name="Cartel" [(ngModel)]="file" id="iCartel"
+                            aria-describedby="Cartel" placeholder="" (change)="onFileSelected($event)">
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-danger me-md-2" type="button" (click)="clickLimpiar()">Limpiar</button>
+                        <button type="submit" class="btn btn-primary" (click)="clickGuardar()">Guardar</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-4">
+            <app-tabla-actores (itemSeleccionado)="cargarActor($event)"></app-tabla-actores>
+            <div *ngIf="pelicula.cartel">
+                <div class="card bg-primary-subtle mt-3">
+                    <div class="card-body">
+                        <h4 class="card-title">Cartel</h4>
+                        <img [src]="pelicula.cartel" class="w-100" id="imgCartel">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

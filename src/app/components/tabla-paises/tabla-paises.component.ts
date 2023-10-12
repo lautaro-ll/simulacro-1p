@@ -39,16 +39,26 @@ export class TablaPaisesComponent {
   }
 
   filtrarLista() {
-    console.log(this.busqueda)
     this.subscripcionPaises?.unsubscribe();
-    this.subscripcionPaises = this.servBandera.pais(this.busqueda)
-      .pipe(catchError((error: any, caught: Observable<any>): Observable<any> => {
-        this.misPaises = [];
-        return of();
-      }))
-      .subscribe(banderas => {
-        this.misPaises = banderas;
-        this.misPaises?.sort((a, b) => a.name.common.localeCompare(b.name.common));
-      })
+    if (this.busqueda == "") {
+      this.subscripcionPaises = this.servBandera.fields('name,flags')
+        .subscribe(
+          banderas => {
+            this.misPaises = banderas;
+            this.misPaises?.sort((a, b) => a.name.common.localeCompare(b.name.common));
+          });
+    }
+    else {
+      this.subscripcionPaises = this.servBandera.pais(this.busqueda)
+        .pipe(catchError((error: any, caught: Observable<any>): Observable<any> => {
+          this.misPaises = [];
+          return of();
+        }))
+        .subscribe(banderas => {
+          this.misPaises = banderas;
+          this.misPaises?.sort((a, b) => a.name.common.localeCompare(b.name.common));
+        })
+    }
   }
+
 }

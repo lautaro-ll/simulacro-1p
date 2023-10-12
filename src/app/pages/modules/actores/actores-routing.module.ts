@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AltaActoresComponent } from './alta-actores.component';
+import { AltaActoresComponent } from './alta-actores/alta-actores.component';
 
 const routes: Routes = [
-{
-  path: '',
-  component: AltaActoresComponent
-}
+  {
+    path: '',
+    component: AltaActoresComponent
+  }
 ];
 
 @NgModule({

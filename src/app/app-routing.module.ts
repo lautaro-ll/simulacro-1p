@@ -5,14 +5,17 @@ import { HomeComponent } from './pages/home/home.component';
 const routes: Routes = [
   { 
     path: '', 
-    redirectTo: 'alta', 
-    pathMatch: 'full'
-    // component: HomeComponent
+    component: HomeComponent
     // canActivate: [AuthGuard],
   },
   { 
-    path: 'alta', 
-    loadChildren: () => import('./pages/modules/alta-actores/alta-actores.module')
+    path: 'peliculas', 
+    loadChildren: () => import('./pages/modules/peliculas/peliculas.module')
+    .then(mod => mod.PeliculasModule)
+  },
+  { 
+    path: 'actores', 
+    loadChildren: () => import('./pages/modules/actores/actores.module')
     .then(mod => mod.AltaActoresModule)
   },
   { 

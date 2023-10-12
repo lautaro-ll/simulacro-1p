@@ -1,0 +1,22 @@
+<div class="card bg-primary-subtle">
+    <div class="card-body">
+        <h4 class="card-title">Actores</h4>
+        <div>
+            <!-- <input type="text" [(ngModel)]="busqueda" (keyup)="filtrarLista()" class="form-control pe-5" name="Buscar"
+                id="iBuscar" aria-describedby="Buscar" placeholder="">
+            <fa-icon [icon]="faMagnifyingGlass" style="position: relative; top: -2rem; left: 9.5rem;"></fa-icon> -->
+        </div>
+        <div class="container-actores">
+            <div *ngFor="let item of arrayItems">
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action"
+                        aria-current="true" (click)="clickItem(item)">
+                        <span>{{item.apellido}}, {{item.nombre}}</span>
+                        <br>
+                        <small class="text-muted">{{item.pais}}</small>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

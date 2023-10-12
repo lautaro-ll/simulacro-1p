@@ -24,7 +24,7 @@ export class AltaActoresComponent {
 
   clickGuardar() {
     if (this.nombre != '' && this.apellido != '' && this.sexo != '' && this.pais != '') {
-      this.actoresService.addUsuario(new Actor(this.nombre, this.apellido, this.sexo, this.pais))
+      this.actoresService.addDocument(new Actor(this.nombre, this.apellido, this.sexo, this.pais))
       .then(()=>{
         Swal.fire({
           icon: 'success',
