@@ -1,0 +1,13 @@
+<div class="card bg-primary-subtle">
+    <div class="card-body">
+        <h4 class="card-title">Peliculas</h4>
+        <div class="container-actores">
+            <div *ngFor="let item of peliculas">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="formId1" [value]="item.titulo">
+                  <label for="formId1">{{item.anio}}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

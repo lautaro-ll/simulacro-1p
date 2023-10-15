@@ -4,7 +4,7 @@ import { AltaPeliculasComponent } from './alta-peliculas/alta-peliculas.componen
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'alta',
     component: AltaPeliculasComponent
   }
 ];

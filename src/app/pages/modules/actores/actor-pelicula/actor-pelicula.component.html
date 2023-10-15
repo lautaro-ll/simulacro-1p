@@ -1,0 +1,16 @@
+<main class="p-3">
+    <div class="row m-3">
+        <app-tabla-actores (itemSeleccionado)="cargarActor($event)"></app-tabla-actores>
+    </div>
+    <div class="row m-3">
+        <div class="col">        
+            <app-tabla-peliculas [peliculas]="peliculas"></app-tabla-peliculas>
+        </div>
+        <div class="col">        
+            <app-detalle-pais [value]="pais"></app-detalle-pais>
+        </div>
+        <div class="col">        
+            <app-detalle-actor [actor]="actor"></app-detalle-actor>
+        </div>
+    </div>
+</main>

@@ -25,6 +25,27 @@ export class PeliculasService {
     return collectionData(this.colRef, { idField: 'id' }) as Observable<Pelicula[]>;
   }
 
+  //Obtiene un snapshot de la colección
+  async getDocuments(): Promise<Pelicula[]> {
+    let peliculas: Array<Pelicula> = [];
+    let documentData: DocumentData = new Document();
+    const querySnapshot = await getDocs(this.colRef);
+    querySnapshot.forEach((doc) => {
+        documentData = doc.data();
+        peliculas.push(new Pelicula(
+                      documentData['titulo'], 
+                      documentData['anio'], 
+                      documentData['duracion'], 
+                      documentData['pais'], 
+                      documentData['director'], 
+                      documentData['protagonista'], 
+                      documentData['genero'], 
+                      documentData['cartel']
+                      ));
+      });
+      return peliculas;
+  }
+
   //Devuelve un objeto por id
   async getDocument(id: string) {
     var documentData: DocumentData = new Document();
@@ -49,7 +70,7 @@ export class PeliculasService {
   //Actualiza o crea por id un objeto en la colección
   async setDocument(obj: Pelicula, id: string) {
     const docRef = doc(this.colRef, id);    //crea un doc con id automatico
-    obj.id = id;                            //lo carga en el obj nuevo
+    obj.titulo = id;                            //lo carga en el obj nuevo
     return setDoc(docRef, { ...obj }); 
   }
 
@@ -60,7 +81,7 @@ export class PeliculasService {
 
   //Modifica un objeto por id
   updDocument(obj: Pelicula) {
-    const docRef = doc(this.firestore, `peliculas/${obj.id}`);
+    const docRef = doc(this.firestore, `peliculas/${obj.titulo}`);
     return updateDoc(docRef, { ...obj })
   }
 

@@ -78,7 +78,7 @@ export class AltaPeliculasComponent {
 
   guardarPelicula() {
     const storage = getStorage();
-    const storageRef = ref(storage, this.pelicula.titulo + '-' + this.pelicula.id + this.file.substring(this.file.lastIndexOf("."),this.file.length));
+    const storageRef = ref(storage, this.pelicula.titulo + '-' + this.file.substring(this.file.lastIndexOf("."),this.file.length));
 
     uploadString(storageRef, this.pelicula.cartel!, 'data_url').then((snapshot) => {
       getDownloadURL(snapshot.ref).then(async (url) => {

@@ -1,5 +1,4 @@
 export class Pelicula {
-    id: string;
     titulo: string;
     anio: number | null;
     duracion: string;
@@ -9,11 +8,10 @@ export class Pelicula {
     genero: string;
     cartel: string;
 
-    constructor(id: string = "", titulo: string = "", anio: number | null = null, 
+    constructor(titulo: string = "", anio: number | null = null, 
                 duracion: string = "", pais: string = "", director: string = "", 
                 protagonista: string = "", genero: string = "", cartel: string = "") 
     {
-        this.id = id;
         this.titulo = titulo;
         this.anio = anio;
         this.duracion = duracion;

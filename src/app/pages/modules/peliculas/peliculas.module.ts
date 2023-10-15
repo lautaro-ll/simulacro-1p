@@ -18,6 +18,9 @@ import { TablaActoresComponent } from 'src/app/components/tabla-actores/tabla-ac
     PeliculasRoutingModule,
     FormsModule,
     FontAwesomeModule
+  ],
+  exports: [
+    TablaActoresComponent
   ]
 })
 export class PeliculasModule { }

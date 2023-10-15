@@ -1,0 +1,21 @@
+<div class="card bg-primary-subtle">
+    <div class="card-body">
+        <h4 class="card-title">Detalle Actor</h4>
+        <div class="container">
+            <form>
+                <div class="mb-3 row">
+                    <label for="inputName" class="col-4 col-form-label">País</label>
+                    <div class="col-8">
+                        <input type="text" class="form-control" [value]="nombre">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="inputName" class="col-4 col-form-label">Bandera</label>
+                    <div class="col-8">
+                        <img [src]="imagen" class="my-auto border border-1" style="max-width: 100%;">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
